@@ -6,45 +6,39 @@ Machine Learning Prediction Models of Rare Hematology Diseases: a free and open-
 ```bash
 conda create --name hematology_inference python fastapi scikit-learn pandas joblib numpy
 pip install fastapi uvicorn
+conda install xgboost
 conda activate hematology_inference
 ```
 
 ### Setup
 
-GitHub Pages (Frontend)
-        ↓
-Fetch API
-        ↓
-Render (Python FastAPI Backend)
-        ↓
-Machine Learning Model
-
+Frontend (GitHub Pages)
+      ↓
+Hugging Face Space
+      ↓
+FastAPI app
+      ↓
+XGBoost model
 
 ### Folder Structure
 
 hematology-inference/
-
-├── backend/
-│   ├── app.py
-│   ├── train_model.py
-│   ├── model.pkl
-│   ├── requirements.txt
-│   └── render.yaml
-│
-└── frontend/
-    ├── index.html
-    ├── script.js
-    └── style.css
+space/
+├── app.py
+├── xgb_model.pkl
+├── train_model.py   (optional, local only)
+├── requirements.txt
+└── README.md
 
 ### Setup
 
 Train dummy model and save as `model.pkl` file:
 ```bash
-cd backend
+cd space
 python3 train_model.py
 ```
 
 Start the app locally to make sure it works:
 ```
-python -m uvicorn app:app --reload
+uvicorn app:app --host 0.0.0.0 --port 7860
 ```

@@ -1,9 +1,5 @@
 const API_URL = "https://catai67-testing-env.hf.space/predict";
 
-/*
-  20 FEATURES
-  Replace names with your real model features if needed
-*/
 const FEATURES = [
   { name: "Age", default: 50 },
   { name: "WBC Count", default: 7.5 },
@@ -31,25 +27,22 @@ const container = document.getElementById("inputs");
 const resultBox = document.getElementById("result");
 const loading = document.getElementById("loading");
 
-// CREATE SINGLE COLUMN FORM
-FEATURES.forEach((feature, index) => {
+FEATURES.forEach((f, i) => {
 
-  const wrapper = document.createElement("div");
-  wrapper.className = "row";
+  const row = document.createElement("div");
+  row.className = "row";
 
   const label = document.createElement("label");
-  label.innerText = `Feature: ${feature.name}`;
+  label.innerText = f.name;
 
   const input = document.createElement("input");
   input.type = "number";
-  input.step = "any";
-  input.value = feature.default;
-  input.id = `f${index}`;
+  input.value = f.default;
+  input.id = `f${i}`;
 
-  wrapper.appendChild(label);
-  wrapper.appendChild(input);
-
-  container.appendChild(wrapper);
+  row.appendChild(label);
+  row.appendChild(input);
+  container.appendChild(row);
 });
 
 async function predict() {
@@ -65,30 +58,27 @@ async function predict() {
   btn.disabled = true;
 
   try {
-    const response = await fetch(API_URL, {
+    const res = await fetch(API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ features })
     });
 
-    const data = await response.json();
+    const data = await res.json();
 
     const risk =
       data.probability > 0.7 ? "🔴 High Risk"
-      : data.probability > 0.4 ? "🟠 Medium Risk"
+      : data.probability > 0.4 ? "🟠 Moderate Risk"
       : "🟢 Low Risk";
 
     resultBox.innerHTML = `
-      <h3>Prediction: ${data.prediction}</h3>
-      <p>Probability: ${data.probability.toFixed(3)}</p>
-      <p>Status: ${risk}</p>
+      <div><b>Prediction:</b> ${data.prediction}</div>
+      <div><b>Probability:</b> ${data.probability.toFixed(3)}</div>
+      <div><b>Status:</b> ${risk}</div>
     `;
 
-  } catch (err) {
-    resultBox.innerHTML = "❌ Error connecting to model";
-    console.error(err);
+  } catch (e) {
+    resultBox.innerHTML = "Error contacting model";
   }
 
   loading.classList.add("hidden");

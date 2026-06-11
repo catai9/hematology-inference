@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XGBoost Predictor</title>
+  <title>Clinical ML Predictor</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -12,14 +12,16 @@
 
   <div class="container">
 
-    <h1>🧠 XGBoost Prediction Model</h1>
-    <p>Enter clinical / feature values below</p>
+    <div class="header">
+      <h1>Clinical Risk Prediction</h1>
+      <p>Enter patient parameters to generate model output</p>
+    </div>
 
-    <div id="inputs" class="grid"></div>
+    <div id="inputs" class="form"></div>
 
-    <button onclick="predict()" id="btn">Predict</button>
+    <button onclick="predict()" id="btn">Run Prediction</button>
 
-    <div id="loading" class="hidden">Running model...</div>
+    <div id="loading" class="hidden">Analyzing patient data...</div>
 
     <div id="result" class="result"></div>
 

@@ -1,11 +1,6 @@
 const API_URL = "https://catai67-testing-env.hf.space/predict";
-// curl -X POST "https://catai67-testing-env.hf.space/predict" \
-// -H "Content-Type: application/json" \
-// -d '{
-//   "features": [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-// }'
 
-// create 20 inputs
+// create 20 inputs dynamically
 const container = document.getElementById("inputs");
 
 for (let i = 0; i < 20; i++) {
@@ -22,21 +17,28 @@ async function predict() {
 
     for (let i = 0; i < 20; i++) {
         features.push(
-            parseFloat(document.getElementById("f" + i).value)
+            parseFloat(document.getElementById("f" + i).value || 0)
         );
     }
 
-    const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ features })
-    });
+    try {
+        const res = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ features })
+        });
 
-    const data = await response.json();
+        const data = await res.json();
 
-    document.getElementById("result").innerText =
-        "Prediction: " + data.prediction +
-        " | Probability: " + data.probability.toFixed(3);
+        document.getElementById("result").innerText =
+            "Prediction: " + data.prediction +
+            " | Probability: " + data.probability.toFixed(3);
+
+    } catch (err) {
+        document.getElementById("result").innerText =
+            "Error connecting to model";
+        console.error(err);
+    }
 }

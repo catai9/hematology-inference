@@ -5,13 +5,12 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  padding: 30px;
 }
 
 .container {
-  width: 90%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 600px;
   background: #1e293b;
   padding: 25px;
   border-radius: 12px;
@@ -19,22 +18,40 @@ body {
 }
 
 h1 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 p {
   color: #94a3b8;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+#inputs {
   margin-top: 20px;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #cbd5e1;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #0f172a;
+  color: white;
+}
+
 button {
-  margin-top: 20px;
+  margin-top: 15px;
   width: 100%;
   padding: 12px;
   background: #3b82f6;
@@ -51,28 +68,10 @@ button:hover {
 
 .result {
   margin-top: 20px;
-  font-size: 18px;
   text-align: center;
+  font-size: 18px;
 }
 
 .hidden {
   display: none;
-}
-
-.input-box {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-
-label {
-  margin-bottom: 4px;
-  color: #cbd5e1;
-}
-
-input {
-  padding: 6px;
-  border-radius: 6px;
-  border: none;
-  text-align: center;
 }

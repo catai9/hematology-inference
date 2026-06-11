@@ -1,8 +1,8 @@
 const API_URL = "https://catai67-testing-env.hf.space/predict";
 
 /*
-  20 FEATURE NAMES + DEFAULT VALUES
-  (you can rename these to your real dataset later)
+  20 FEATURES
+  Replace names with your real model features if needed
 */
 const FEATURES = [
   { name: "Age", default: 50 },
@@ -15,7 +15,6 @@ const FEATURES = [
   { name: "Eosinophils", default: 2 },
   { name: "Basophils", default: 1 },
   { name: "LDH", default: 180 },
-
   { name: "CRP", default: 3 },
   { name: "Creatinine", default: 1 },
   { name: "ALT", default: 25 },
@@ -28,18 +27,18 @@ const FEATURES = [
   { name: "Albumin", default: 4.0 }
 ];
 
-const inputsContainer = document.getElementById("inputs");
+const container = document.getElementById("inputs");
 const resultBox = document.getElementById("result");
 const loading = document.getElementById("loading");
 
-// CREATE FORM DYNAMICALLY
+// CREATE SINGLE COLUMN FORM
 FEATURES.forEach((feature, index) => {
 
   const wrapper = document.createElement("div");
-  wrapper.className = "input-box";
+  wrapper.className = "row";
 
   const label = document.createElement("label");
-  label.innerText = feature.name;
+  label.innerText = `Feature: ${feature.name}`;
 
   const input = document.createElement("input");
   input.type = "number";
@@ -50,7 +49,7 @@ FEATURES.forEach((feature, index) => {
   wrapper.appendChild(label);
   wrapper.appendChild(input);
 
-  inputsContainer.appendChild(wrapper);
+  container.appendChild(wrapper);
 });
 
 async function predict() {
@@ -74,10 +73,6 @@ async function predict() {
       body: JSON.stringify({ features })
     });
 
-    if (!response.ok) {
-      throw new Error("API error: " + response.status);
-    }
-
     const data = await response.json();
 
     const risk =
@@ -92,7 +87,7 @@ async function predict() {
     `;
 
   } catch (err) {
-    resultBox.innerHTML = "❌ Error calling model";
+    resultBox.innerHTML = "❌ Error connecting to model";
     console.error(err);
   }
 

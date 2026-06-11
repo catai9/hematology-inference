@@ -1,58 +1,65 @@
 body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
-  background: #0b1220; /* deep clinical navy */
-  color: #e5e7eb;
+  background: #fff7f9; /* soft hematology pink-white */
+  color: #1f2937;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 40px 16px;
 }
 
-/* MAIN CARD */
+/* MAIN CONTAINER */
 .container {
   width: 100%;
-  max-width: 720px;
-  background: #111a2e;
-  border: 1px solid #1f2a44;
-  border-radius: 14px;
+  max-width: 760px;
+  background: #ffffff;
+  border: 1px solid #f3d6df;
+  border-radius: 16px;
   padding: 28px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px rgba(225, 29, 72, 0.08);
 }
 
 /* HEADER */
 .header h1 {
   margin: 0;
-  font-size: 22px;
-  color: #eaf2ff;
+  font-size: 24px;
+  color: #be123c;
+  letter-spacing: -0.3px;
 }
 
 .header p {
   margin-top: 6px;
-  color: #94a3b8;
+  color: #6b7280;
   font-size: 13px;
 }
 
 /* FORM */
 .form {
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
-/* EACH ROW */
+/* ROW (modern card-like input row) */
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 12px;
+  padding: 12px 14px;
   margin-bottom: 10px;
-  background: #0e1628;
-  border: 1px solid #1f2a44;
-  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #f8c9d6;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.row:hover {
+  border-color: #e11d48;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
 }
 
 /* LABEL */
 label {
   font-size: 13px;
-  color: #cbd5e1;
+  color: #374151;
   flex: 1;
 }
 
@@ -60,36 +67,38 @@ label {
 input {
   width: 140px;
   padding: 8px 10px;
-  border-radius: 8px;
-  border: 1px solid #2a3b5f;
-  background: #0b1220;
-  color: #e5e7eb;
+  border-radius: 10px;
+  border: 1px solid #f3d6df;
+  background: #fff7f9;
+  color: #111827;
   text-align: right;
   outline: none;
   transition: 0.2s;
 }
 
 input:focus {
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 2px rgba(56,189,248,0.2);
+  border-color: #e11d48;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
 }
 
 /* BUTTON */
 button {
   margin-top: 18px;
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   border: none;
-  border-radius: 10px;
-  background: #2563eb;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e11d48, #fb7185);
   color: white;
   font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.2s;
 }
 
 button:hover {
-  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(225, 29, 72, 0.2);
 }
 
 /* LOADING */
@@ -100,16 +109,21 @@ button:hover {
 #loading {
   margin-top: 12px;
   font-size: 13px;
-  color: #93c5fd;
+  color: #be123c;
 }
 
 /* RESULT CARD */
 .result {
   margin-top: 20px;
-  padding: 14px;
-  background: #0e1628;
-  border: 1px solid #1f2a44;
-  border-radius: 10px;
+  padding: 16px;
+  background: #fff7f9;
+  border: 1px solid #f3d6df;
+  border-radius: 12px;
   text-align: center;
   font-size: 15px;
+}
+
+/* RESULT EMPHASIS */
+.result b {
+  color: #be123c;
 }

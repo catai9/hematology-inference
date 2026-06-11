@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clinical ML Predictor</title>
+  <title>Clinical AI Risk Dashboard</title>
+
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="container">
+<div class="app">
 
-    <div class="header">
-      <h1>Clinical Risk Prediction</h1>
-      <p>Enter patient parameters to generate model output</p>
+  <aside class="sidebar">
+    <div class="logo">🧠 Clinical AI System</div>
+    <p class="subtitle">Level 4 Risk Engine</p>
+
+    <div class="info-box">
+      Secure inference pipeline. All predictions are logged and versioned.
     </div>
 
-    <div id="inputs" class="form"></div>
+    <button class="primary-btn" id="predictBtn">
+      Run Prediction
+    </button>
 
-    <button onclick="predict()" id="btn">Run Prediction</button>
+    <div id="loading" class="loading hidden">Running secure inference...</div>
 
-    <div id="loading" class="hidden">Analyzing patient data...</div>
+    <div id="result" class="result hidden"></div>
+  </aside>
 
-    <div id="result" class="result"></div>
+  <main class="main">
+    <h1>Patient Feature Vector</h1>
+    <p class="hint">Clinical inputs (NA allowed, validated before inference)</p>
 
-  </div>
+    <div id="inputs" class="grid"></div>
+  </main>
 
-  <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,135 +1,18 @@
 body {
-  margin: 0;
-  font-family: Inter, Arial, sans-serif;
-  background: #fff7f9;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px;
-  color: #1f2937;
-}
-
-.container {
-  width: 100%;
-  max-width: 780px;
-  background: #ffffff;
-  border: 1px solid #f3d6df;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 12px 30px rgba(225, 29, 72, 0.08);
-}
-
-/* HEADER */
-.header h1 {
-  margin: 0;
-  font-size: 24px;
-  color: #be123c;
-}
-
-.header p {
-  margin-top: 6px;
-  color: #6b7280;
-  font-size: 13px;
-}
-
-/* EACH FEATURE BLOCK */
-.feature-block {
-  display: grid;
-  grid-template-rows: auto auto;
-  gap: 8px;
-
-  padding: 14px;
-  margin-bottom: 12px;
-
-  border: 1px solid #f3d6df;
-  border-radius: 14px;
-  background: #fff;
-}
-
-/* LABEL (BIG + CLEAN) */
-.feature-label {
-  font-size: 15px;
-  font-weight: 600;
-  color: #111827;
-}
-
-/* INPUT + NA ROW */
-.input-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-  align-items: center;
-}
-
-/* INPUT */
-input[type="number"] {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #f3d6df;
-  background: #fff7f9;
-  font-size: 14px;
-  outline: none;
-}
-
-input[type="number"]:focus {
-  border-color: #e11d48;
-  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
-}
-
-/* NA CHECKBOX */
-.na-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: #6b7280;
-  white-space: nowrap;
-}
-
-.na-wrapper input {
-  accent-color: #e11d48;
-}
-
-/* DISABLED INPUT */
-input:disabled {
   background: #f1f5f9;
-  color: #9ca3af;
 }
 
-/* BUTTON */
-button {
-  width: 100%;
-  margin-top: 18px;
-  padding: 13px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #e11d48, #fb7185);
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+/* stronger enterprise feel */
+.sidebar {
+  background: #0b1220;
+  border-right: 1px solid rgba(255,255,255,0.05);
 }
 
-button:hover {
-  transform: translateY(-1px);
+.primary-btn {
+  background: linear-gradient(135deg, #ef4444, #f97316);
 }
 
-/* RESULT */
-.result {
-  margin-top: 18px;
-  padding: 14px;
-  background: #fff7f9;
-  border: 1px solid #f3d6df;
-  border-radius: 12px;
-}
-
-/* LOADING */
-.hidden {
-  display: none;
-}
-
-#loading {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #be123c;
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

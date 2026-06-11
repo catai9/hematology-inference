@@ -122,3 +122,14 @@ button:hover {
   border: 1px solid #f3d6df;
   border-radius: 12px;
 }
+
+/* LOADING */
+.hidden {
+  display: none;
+}
+
+#loading {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #be123c;
+}

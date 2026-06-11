@@ -41,18 +41,20 @@ FEATURES.forEach((f, i) => {
   label.className = "feature-label";
   label.innerText = `${f.name} (${f.unit})`;
 
-    const input = document.createElement("input");
-    input.type = "number";
-    input.value = f.default;
+  const input = document.createElement("input");
+  input.type = "number";
+  input.value = f.default;
+  input.id = `f${i}`;
 
-    const row = document.createElement("div");
-    row.className = "na-row";
+  const naWrapper = document.createElement("label");
+  naWrapper.className = "na-wrapper";
 
-    const label = document.createElement("span");
-    label.textContent = "NA";
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.id = `na${i}`;
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
+  const text = document.createElement("span");
+  text.innerText = "NA";
 
   // HANDLE NA TOGGLE
   checkbox.addEventListener("change", () => {

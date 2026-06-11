@@ -1,96 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cancer-Net BCa</title>
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f2f4f8;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 40px;
-  background: white;
-  min-height: 100vh;
-}
-
-h1 {
-  margin-bottom: 10px;
-}
-
-p {
-  color: #555;
-  line-height: 1.6;
-}
-
-/* form */
-form {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  padding: 12px;
-  background: #28a745;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1e7e34;
-}
-
-/* back link */
-a {
-  display: inline-block;
-  margin-top: 20px;
-  color: #007bff;
-  text-decoration: none;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PNH</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <h1>Cancer-Net BCa</h1>
+    <div class="header">
+      <h1>Paroxysmal nocturnal hemoglobinuria (PNH)</h1>
+      <p>PNH is a rare, acquired, and life-threatening blood disease characterized by the premature destruction of red blood cells by the body's own immune system, leading to anemia, blood clots, and bone marrow failure.</p>
+    </div>
 
-  <p>
-    An open-source initiative for breast cancer treatment planning and grade classification
-    using deep learning models with synthetic correlated diffusion imaging. The project
-    focuses on improving diagnostic accuracy and assisting clinicians with AI-based decision support.
-  </p>
+    <div id="inputs" class="form"></div>
 
-  <form>
-    <h3>Contact / Request Access</h3>
+    <button onclick="predict()" id="btn">Run Prediction</button>
 
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea rows="5" placeholder="Message"></textarea>
+    <div id="loading" class="hidden">Analyzing patient data...</div>
 
-    <button type="submit">Submit</button>
-  </form>
+    <div id="result" class="result"></div>
 
-  <a href="index.html">← Back to Projects</a>
+    <a href="index.html">← Back to Home</a>
 
-</div>
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

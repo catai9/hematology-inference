@@ -3,73 +3,101 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Projects</title>
+<title>HemAI</title>
 
 <style>
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f6f7fb;
-  padding: 40px;
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff7f9; /* soft pink medical theme */
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
 }
 
+/* MAIN CONTAINER */
 .container {
-  max-width: 1000px;
-  margin: auto;
+  width: 100%;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
 }
 
-/* Project card */
+/* PROJECT CARD */
 .project {
   display: flex;
-  gap: 30px;
+  gap: 18px;
   align-items: center;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border: 1px solid #f3d6df;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(225, 29, 72, 0.06);
+  transition: 0.25s ease;
 }
 
+/* hover effect like modern SaaS cards */
+.project:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(225, 29, 72, 0.12);
+  border-color: #f8c9d6;
+}
+
+/* IMAGE */
 .project img {
-  width: 45%;
-  border-radius: 10px;
+  width: 42%;
+  border-radius: 12px;
   object-fit: cover;
 }
 
+/* TEXT AREA */
 .project-content {
   flex: 1;
 }
 
+/* TITLE */
 .project h2 {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #be123c;
+  letter-spacing: -0.2px;
 }
 
+/* DESCRIPTION */
 .project p {
-  color: #555;
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
   line-height: 1.5;
 }
 
-/* Link styled like button */
+/* BUTTON LINK */
 .project a {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 16px;
-  background: #007bff;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e11d48, #fb7185);
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
 }
 
+/* BUTTON HOVER */
 .project a:hover {
-  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(225, 29, 72, 0.2);
 }
 
-/* responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .project {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .project img {
@@ -82,19 +110,23 @@ body {
 <body>
 
 <div class="container">
+    <h1>Description</h1>
+
+  <p>
+    HemAI is a collection of publicly available and free machine learning models for the diagnosis of various rare hematology diseases using routine biological parameters.
+  </p>
 
   <!-- Project 1 -->
   <div class="project">
     <img src="https://via.placeholder.com/500x300" alt="Cancer Net BCa">
 
     <div class="project-content">
-      <h2>Disease 1</h2>
+      <h2>Thrombotic Thrombocytopenia Purpura (TTP)</h2>
       <p>
-        An open-source initiative for breast cancer treatment planning and grade classification
-        using deep learning models with synthetic imaging data.
+        TTP is a rare, life-threatening blood disorder characterized by the formation of microscopic blood clots throughout the body that consume platelets, damage red blood cells, and restrict blood flow to vital organs like the brain and kidneys.
       </p>
 
-      <a href="disease1.html">View Project</a>
+      <a href="disease1.html">Try Model</a>
     </div>
   </div>
 
@@ -103,13 +135,12 @@ body {
     <img src="https://via.placeholder.com/500x300" alt="Cancer Net PCa">
 
     <div class="project-content">
-      <h2>Disease 2</h2>
+      <h2>Paroxysmal nocturnal hemoglobinuria (PNH)</h2>
       <p>
-        Prostate cancer segmentation and clinical significance delineation using MRI images,
-        computer vision, and generative AI models.
+        PNH is a rare, acquired, and life-threatening blood disease characterized by the premature destruction of red blood cells by the body's own immune system, leading to anemia, blood clots, and bone marrow failure.
       </p>
 
-      <a href="disease2.html">View Project</a>
+      <a href="disease2.html">Try Model</a>
     </div>
   </div>
 

@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>XGBoost Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XGBoost Predictor</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<h2>XGBoost Predictor</h2>
+  <div class="container">
 
-<div id="inputs"></div>
+    <h1>🧠 XGBoost Prediction Model</h1>
+    <p>Enter 20 feature values to get a prediction</p>
 
-<button onclick="predict()">Predict</button>
+    <div id="inputs" class="grid"></div>
 
-<h3 id="result"></h3>
+    <button onclick="predict()" id="btn">Predict</button>
 
-<script src="script.js"></script>
+    <div id="loading" class="hidden">Running model...</div>
+
+    <div id="result" class="result"></div>
+
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>

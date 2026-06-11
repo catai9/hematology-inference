@@ -127,3 +127,50 @@ button:hover {
 .result b {
   color: #be123c;
 }
+
+.feature-block {
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #f3d6df;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* LABEL */
+.feature-label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+/* INPUT */
+.feature-block input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #f3d6df;
+  background: #fff7f9;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* NA CHECKBOX ROW */
+.na-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* CHECKBOX ACCENT */
+.na-wrapper input {
+  accent-color: #e11d48;
+}
+
+input:disabled {
+  background: #f1f5f9;
+  color: #9ca3af;
+  font-style: italic;
+}

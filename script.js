@@ -1,24 +1,34 @@
 FEATURES.forEach((f, i) => {
 
-  const block = document.createElement("div");
-  block.className = "feature-block";
+  const row = document.createElement("div");
+  row.className = "feature-block";
 
-  // LABEL
+  // LEFT
   const label = document.createElement("div");
   label.className = "feature-label";
-  label.innerText = `${f.name} (${f.unit})`;
 
-  // INPUT ROW
-  const row = document.createElement("div");
-  row.className = "input-row";
+  const name = document.createElement("div");
+  name.className = "feature-name";
+  name.innerText = f.name;
+
+  const unit = document.createElement("div");
+  unit.className = "feature-unit";
+  unit.innerText = f.unit;
+
+  label.appendChild(name);
+  label.appendChild(unit);
+
+  // RIGHT CONTROLS
+  const controls = document.createElement("div");
+  controls.className = "controls";
 
   const input = document.createElement("input");
   input.type = "number";
   input.value = f.default;
   input.id = `f${i}`;
 
-  const naWrapper = document.createElement("label");
-  naWrapper.className = "na-wrapper";
+  const na = document.createElement("label");
+  na.className = "na-wrapper";
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
@@ -37,14 +47,14 @@ FEATURES.forEach((f, i) => {
     }
   });
 
-  naWrapper.appendChild(checkbox);
-  naWrapper.appendChild(text);
+  na.appendChild(checkbox);
+  na.appendChild(text);
 
-  row.appendChild(input);
-  row.appendChild(naWrapper);
+  controls.appendChild(input);
+  controls.appendChild(na);
 
-  block.appendChild(label);
-  block.appendChild(row);
+  row.appendChild(label);
+  row.appendChild(controls);
 
-  container.appendChild(block);
+  document.querySelector(".form").appendChild(row);
 });
